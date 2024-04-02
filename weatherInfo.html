@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="css/weatherinfo.css">
+    <!-- defer tell us the browser to wait until the page has finished parsing before executing the script  -->
+
+    <script src="js/weathermap.js" defer></script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsBg8QooRk03vHXUkwS6L2YDnDNM83Dv8&libraries=places"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-nav" id="home">
+            <div class="logo">Your Logo</div>
+            <nav>
+                <ul>
+                    <li><a href="final.html">Home</a></li>
+                    <li><a href="#forcast">weather Forecast</a></li>
+                    <li><a href="#map">weather map</a></li>
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+    <div class="weather-input">
+        <h3>Enter a city</h3>
+        <input class="cityInput  country" type="text" placeholder="city name,cuntry name">
+        <button class="search-btn">Search</button>
+        <div class="separator"></div>
+        <button class="location-btn">Use current location</button>
+    </div>
+    <!-- country data  -->
+    <div class="country-data">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Flag</th>
+                    <th>Population(IN Million)</th>
+                    <th>Area (Square Meters)</th>
+                    <th>Capital</th>
+                    <th>Languages</th>
+                </tr>
+            </thead>
+            <tbody id="country-table-data"></tbody>
+        </table>
+    </div>
+
+    <!-- weather data  -->
+    <div class="weather-data" id="forcast">
+        <div class="current-weather">
+            <!-- <div class="details">
+                    <h2>kolkata(2024-02-02)</h2>
+                    <h4>Temperature:19.10°C</h4>
+                    <h4>wind: 4.31 M/s</h4>
+                    <h4>humidity:78%</h4>
+                </div>
+                <div class="icon">
+                    <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="">
+                    <h6>Moderate Rain</h6>
+                </div> -->
+            <div class="details">
+                <h2>city Or placeName(custom)</h2>
+                <h4><i class="material-icons">device_thermostat</i> Temperature:...°C</h4>
+                <h4><i class="material-icons">speed</i> wind-speed:... M/s</h4>
+                <h4><i class="material-icons">water_drop</i> humidity:...%</h4>
+                <h4><i class="material-icons">description</i> description:</h4>
+            </div>
+            <div class="icon">
+                <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="">
+                <h6>custom weather </h6>
+            </div>
+        </div>
+        <div class="days-forcast">
+            <h2>12-Days Forecast</h2>
+            <ul class="weather-cards">
+                <!-- <li class="card">
+                        <h3>kolkata(2024-02-02)</h3>
+                        <img src="https://cdn.weatherapi.com/weather/64x64/day/176.png" alt="">
+                        <h4>Temp:19.10°C</h4>
+                        <h4>wind: 4.31 M/s</h4>
+                        <h4>humidity:78%</h4>
+                    </li> -->
+                <li class="card">
+                    <h3>(custom)</h3>
+                    <h4><i class="material-icons">device_thermostat</i>:..°C</h4>
+                    <h4><i class="material-icons">speed</i>:.. M/s</h4>
+                    <h4><i class="material-icons">water_drop</i>:..%</h4>
+                    <h4><i class="material-icons">description</i>:</h4>
+                </li>
+                <li class="card">
+                    <h3>(custom)</h3>
+                    <h4><i class="material-icons">device_thermostat</i>:..°C</h4>
+                    <h4><i class="material-icons">speed</i>:.. M/s</h4>
+                    <h4><i class="material-icons">water_drop</i>:..%</h4>
+                    <h4><i class="material-icons">description</i>:</h4>
+                </li>
+                <li class="card">
+                    <h3>(custom)</h3>
+                    <h4><i class="material-icons">device_thermostat</i>:..°C</h4>
+                    <h4><i class="material-icons">speed</i>:.. M/s</h4>
+                    <h4><i class="material-icons">water_drop</i>:..%</h4>
+                    <h4><i class="material-icons">description</i>:</h4>
+                </li>
+                <li class="card">
+                    <h3>(custom)</h3>
+                    <h4><i class="material-icons">device_thermostat</i>:..°C</h4>
+                    <h4><i class="material-icons">speed</i>:.. M/s</h4>
+                    <h4><i class="material-icons">water_drop</i>:..%</h4>
+                    <h4><i class="material-icons">description</i>:</h4>
+                </li>
+                <li class="card">
+                    <h3>(custom)</h3>
+                    <h4><i class="material-icons">device_thermostat</i>:..°C</h4>
+                    <h4><i class="material-icons">speed</i>:.. M/s</h4>
+                    <h4><i class="material-icons">water_drop</i>:..%</h4>
+                    <h4><i class="material-icons">description</i>:</h4>
+                </li>
+                <li class="card">
+                    <h3>(custom)</h3>
+                    <h4><i class="material-icons">device_thermostat</i>:..°C</h4>
+                    <h4><i class="material-icons">speed</i>:.. M/s</h4>
+                    <h4><i class="material-icons">water_drop</i>:..%</h4>
+                    <h4><i class="material-icons">description</i>:</h4>
+                </li>
+                <li class="card">
+                    <h3>(custom)</h3>
+                    <h4><i class="material-icons">device_thermostat</i>..°C</h4>
+                    <h4><i class="material-icons">speed</i>:.. M/s</h4>
+                    <h4><i class="material-icons">water_drop</i>:..%</h4>
+                    <h4><i class="material-icons">description</i>:</h4>
+                </li>
+                <li class="card">
+                    <h3>(custom)</h3>
+                    <h4><i class="material-icons">device_thermostat</i>:..°C</h4>
+                    <h4><i class="material-icons">speed</i>:.. M/s</h4>
+                    <h4><i class="material-icons">water_drop</i>:..%</h4>
+                    <h4><i class="material-icons">description</i>:</h4>
+                </li>
+                <li class="card">
+                    <h3>(custom)</h3>
+                    <h4><i class="material-icons">device_thermostat</i>:..°C</h4>
+                    <h4><i class="material-icons">speed</i>:.. M/s</h4>
+                    <h4><i class="material-icons">water_drop</i>:..%</h4>
+                    <h4><i class="material-icons">description</i>:</h4>
+                </li>
+                <li class="card">
+                    <h3>(custom)</h3>
+                    <h4><i class="material-icons">device_thermostat</i>:..°C</h4>
+                    <h4><i class="material-icons">speed</i>:.. M/s</h4>
+                    <h4><i class="material-icons">water_drop</i>:..%</h4>
+                    <h4><i class="material-icons">description</i>:</h4>
+                </li>
+                <li class="card">
+                    <h3>(custom)</h3>
+                    <h4><i class="material-icons">device_thermostat</i>:°C</h4>
+                    <h4><i class="material-icons">speed</i>:.. M/s</h4>
+                    <h4><i class="material-icons">water_drop</i>:..%</h4>
+                    <h4><i class="material-icons">description</i>:</h4>
+                </li>
+                <li class="card">
+                    <h3>(custom)</h3>
+                    <h4><i class="material-icons">device_thermostat</i>:..°C</h4>
+                    <h4><i class="material-icons">speed</i>:.. M/s</h4>
+                    <h4><i class="material-icons">water_drop</i>:..%</h4>
+                    <h4><i class="material-icons">description</i>:</h4>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+
+    <!-- weather information  -->
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> <!-- use for weather map  -->
+    <div class="weather-information">
+        <!-- weather map -->
+        <div class="weather-map">
+            <div id="map"></div>
+            <!-- <div id="weather-info"></div> -->
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>Who we are</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dolor nam corrupti fuga praesentium
+                    nulla quidem autem dolorem voluptas pariatur ex consequatur ipsam voluptatibus magni modi
+                    repellendus, aliquid corporis maiores!</p>
+            </div>
+            <div class="footer-info">
+                <h3>Services</h3>
+                <ul>
+                    <li>abogfdgut ghf</li>
+                    <li>abgfdoutjh gh</li>
+                    <li>abfgout gjg</li>
+                    <li>fggdfg ghgh</li>
+                    <li>abgfdgo ghut</li>
+                    <li>dddgff fghh</li>
+                    <li>hfhfhjhfjhj ghf</li>
+                </ul>
+            </div>
+            <div class="footer-info">
+                <h3>Products</h3>
+                <ul>
+                    <li>abogfdgut ghf</li>
+                    <li>abgfdoutjh gh</li>
+                    <li>abfgout gjg</li>
+                    <li>fggdfg ghgh</li>
+                    <li>abgfdgo ghut</li>
+                    <li>dddgff fghh</li>
+                    <li>hfhfhjhfjhj ghf</li>
+                </ul>
+            </div>
+            <div class="footer-info">
+                <h3>Investor</h3>
+                <ul>
+                    <li>abogfdgut ghf</li>
+                    <li>abgfdoutjh gh</li>
+                    <li>abfgout gjg</li>
+                    <li>fggdfg ghgh</li>
+                    <li>abgfdgo ghut</li>
+                    <li>dddgff fghh</li>
+                    <li>hfhfhjhfjhj ghf</li>
+                </ul>
+            </div>
+            <div class="footer-info">
+                <h3>Cerear</h3>
+                <ul>
+                    <li>abogfdgut ghf</li>
+                    <li>abgfdoutjh gh</li>
+                    <li>abfgout gjg</li>
+                    <li>fggdfg ghgh</li>
+                    <li>abgfdgo ghut</li>
+                    <li>dddgff fghh</li>
+                    <li>hfhfhjhfjhj ghf</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer-details">
+            <div>
+                <h3>get news & offers</h3>
+                <input type="email" name="" placeholder="enter your email">
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa fa-envelope"></i></a></li>
+                </ul>
+            </div>
+            <div id="contact">
+                <h3>Contact us</h3>
+                <span>+(91) 9091010059</span>
+                <span>weather01@gmail.com</span>
+                <span>www.weather.co.in</span>
+
+            </div>
+        </div>
+        <p>&copy;2024 weather will be boom</p>
+    </div>
+    <!-- jump to top  -->
+    <a href="#"><button class="topbtn"><i class="fa-solid fa fa-angle-up"></i></button></a>
+</body>
+
+</html>

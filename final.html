@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather-app</title>
+    <link rel="stylesheet" href="css/final.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="js/account.js"></script>
+    <script src="js/product.js"></script>
+    <script src="js/final.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsBg8QooRk03vHXUkwS6L2YDnDNM83Dv8&libraries=places"></script>
+
+    <!-- for swiper  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <header id="header">
+        <div class="header-top">
+            <div class="offer">
+                <div class="scroller">
+                    <div id="scroller-in">
+                        <p>Use code FIRST and Get 10% OFF* on new weather measurment product over $10. Maximum Discount:
+                            $1.5. T&C
+                            Apply</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <ul class="flexitem">
+                    <li><a href="#">INR <span class="small-icon"><i class="fas fa-angle-down"></i></span></a>
+                        <ul>
+                            <li><a href="#">INR</a></li>
+                            <li><a href="#">USD</a></li>
+                            <li><a href="#">EURO</a></li>
+                            <li><a href="#">TAKA</a></li>
+                            <li><a href="#">DINAR</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">ENGLISH <span class="large-icon"><i class="fas fa-angle-down"></i></span></a>
+                        <ul>
+                            <li><a href="#">English</a></li>
+                            <li><a href="#">Hindi</a></li>
+                            <li><a href="#">Bengali</a></li>
+                            <li><a href="#">Spanish</a></li>
+                            <li><a href="#">Urdu</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-nav">
+            <div class="logo">Your Logo</div>
+            <div class="searchBox">
+                <input class="searchInput" type="text" name="" placeholder="go for any product...">
+                <button class="searchButton" href="#">
+                    <i class="material-icons">search
+                    </i>
+                </button>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="weatherInfo.html">Weather-data</a></li>
+                    <li><a href="#wrold-enviroment">weather Blog</a></li>
+                    <li><a href="#w-product">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="cart-icon btn"><i class="fa fa-shopping-cart"></i> <span>(0)</span></a></li>
+                    <li><a href="#" class="account-icon btn"><i class='fas fa-user-alt'></i></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="user-info">
+            <!-- Account section -->
+            <div id="account-section" style="display: none;">
+                <div class="form-container" id="signin-form">
+                    <h2>Sign In</h2>
+                    <form>
+                        <input type="text" id="signin-email" placeholder="Email">
+                        <input type="password" id="signin-password" placeholder="Password">
+                        <button type="submit">Sign In</button>
+                    </form>
+                    <p>Don't have an account? <a href="#" id="toggle-signup">Sign Up</a></p>
+                </div>
+                <div class="form-container" id="signup-form" style="display: none;">
+                    <h2>Sign Up</h2>
+                    <form>
+                        <input type="text" id="signup-name" placeholder="Name">
+                        <input type="text" id="signup-email" placeholder="Email">
+                        <input type="password" id="signup-password" placeholder="Password">
+                        <button type="submit">Sign Up</button>
+                    </form>
+                    <p>Already have an account? <a href="#" id="toggle-signin">Sign In</a></p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="home">
+        <div class="slides-container">
+            <div class="myslide slide">
+                <video class="bg-video" autoplay muted loop>
+                    <source src="video/manegent.mp4" type="video/mp4">
+                </video>
+                <div class="content">
+                    <img src="img/weatherLogo.jpg" alt="">
+                    <h3>know more our manegent</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloribus iusto reiciendis
+                        voluptate
+                        quod sapiente explicabo fuga iure eius, optio voluptatibus incidunt dolor magni id veritatis
+                        natus
+                        possimus consequatur obcaecati?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam
+                        doloribus iusto reiciendis voluptate
+                        quod sapiente explicabo fuga iure eius, optio voluptatibus incidunt dolor magni id veritatis
+                        natus
+                        possimus consequatur obcaecati?</p>
+                    <a href="#" class="btn">know more</a>
+                </div>
+            </div>
+            <div class="myslide slide">
+                <video class="bg-video" autoplay muted loop>
+                    <source src="video/weather-forecast.mp4" type="video/mp4">
+                </video>
+                <div class="content">
+                    <img src="img/weatherLogo.jpg" alt="">
+                    <h3>know more our manegent</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloribus iusto reiciendis
+                        voluptate
+                        quod sapiente explicabo fuga iure eius, optio voluptatibus incidunt dolor magni id veritatis
+                        natus
+                        possimus consequatur obcaecati?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam
+                        doloribus iusto reiciendis voluptate
+                        quod sapiente explicabo fuga iure eius, optio voluptatibus incidunt dolor magni id veritatis
+                        natus
+                        possimus consequatur obcaecati?</p>
+                    <a href="#" class="btn">know more</a>
+                </div>
+            </div>
+            <div class="myslide slide">
+                <video class="bg-video" autoplay muted loop>
+                    <source src="video/weather-map.mp4" type="video/mp4">
+                </video>
+                <div class="content">
+                    <img src="img/weatherLogo.jpg" alt="">
+                    <h3>know more our manegent</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloribus iusto reiciendis
+                        voluptate
+                        quod sapiente explicabo fuga iure eius, optio voluptatibus incidunt dolor magni id veritatis
+                        natus
+                        possimus consequatur obcaecati?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam
+                        doloribus iusto reiciendis voluptate
+                        quod sapiente explicabo fuga iure eius, optio voluptatibus incidunt dolor magni id veritatis
+                        natus
+                        possimus consequatur obcaecati?</p>
+                    <a href="#" class="btn">know more</a>
+                </div>
+            </div>
+            <div class=" myslide slide ">
+                <video class="bg-video" autoplay muted loop>
+                    <source src="video/weather-news.mp4" type="video/mp4">
+                </video>
+                <div class="content">
+                    <img src="img/weatherLogo.jpg" alt="">
+                    <h3>know more our manegent</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam doloribus iusto reiciendis
+                        voluptate
+                        quod sapiente explicabo fuga iure eius, optio voluptatibus incidunt dolor magni id veritatis
+                        natus
+                        possimus consequatur obcaecati?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam
+                        doloribus iusto reiciendis voluptate
+                        quod sapiente explicabo fuga iure eius, optio voluptatibus incidunt dolor magni id veritatis
+                        natus
+                        possimus consequatur obcaecati?</p>
+                    <a href="#" class="btn">know more</a>
+                </div>
+            </div>
+            <a class="previous" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+    </main>
+    <!--  weather-product start   -->
+    <!-- product  -->
+    <div class="weather-product" id="w-product">
+        <div class="product" data-product-id="1">
+            <img src="img/anemometer.jpg" alt="Product 1">
+            <h2>Anemometer</h2>
+            <p><span>MRP:</span>$30.40</p>
+            <p><span>price:</span>$19.99</p>
+            <button class="open-popup-btn">Go to Shop</button>
+        </div>
+        <div class="product" data-product-id="2">
+            <img src="img/Barometers.jpg" alt="Product 2">
+            <h2>Barometer</h2>
+            <p><span>MRP:</span>$40.40</p>
+            <p><span>price:</span>$29.99</p>
+            <button class="open-popup-btn">Go to Shop</button>
+        </div>
+        <div class="product" data-product-id="3">
+            <img src="img/areaexpo.jpg" alt="Product 3">
+            <h2>Areaexpo</h2>
+            <p><span>MRP:</span>$30.40</p>
+            <p><span>price:</span>$21.99</p>
+            <button class="open-popup-btn">Go to Shop</button>
+        </div>
+        <div class="product" data-product-id="4">
+            <img src="img/Wind-Vanes.jpg" alt="Product 4">
+            <h2>Wind-Vanes</h2>
+            <p><span>MRP:</span>$50.40</p>
+            <p><span>price:</span>$32.99</p>
+            <button class="open-popup-btn">Go to Shop</button>
+        </div>
+        <div class="product" data-product-id="5">
+            <img src="img/Hygrometers.jpg" alt="Product 5">
+            <h2>Hygrometer</h2>
+            <p><span>MRP:</span>$32.40</p>
+            <p><span>price:</span>$19.99</p>
+            <button class="open-popup-btn">Go to Shop</button>
+        </div>
+        <div class="product" data-product-id="6">
+            <img src="img/Thermometers.jpg" alt="Product 6">
+            <h2>Thermometers</h2>
+            <p><span>MRP:</span>$20.40</p>
+            <p><span>price:</span>$9.99</p>
+            <button class="open-popup-btn">Go to Shop</button>
+        </div>
+    </div>
+
+    <!-- product-popup  -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <img src="" alt="Product" class="product-image">
+            <div class="button-container">
+                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                <button class="buy-now-btn"><i class="fas fa-store-slash"></i>Buy Now</button>
+            </div>
+            <div class="details">
+                <h2>Product Details</h2>
+                <p class="product-name"></p>
+                <p class="product-price"></p>
+                <ul class="product-details">
+                    <li><span class="specification">Wind Speed:</span> <span class="wind-speed"></span></li>
+                    <li><span class="specification">Wind Speed Accuracy:</span> <span class="wind-accuracy"></span></li>
+                    <li><span class="specification">Temperature Accuracy:</span> <span class="temp-accuracy"></span>
+                    </li>
+                    <li><span class="specification">Humidity Range:</span> <span class="humidity-range"></span></li>
+                    <li><span class="specification">Power:</span> <span class="power"></span></li>
+                </ul>
+                <p><span class="desc">more-detail:</span></p>
+                <p class="product-description "></p>
+                <button class="read-more-btn">Read More</button>
+            </div>
+            <span class="close-popup-btn">&times;</span>
+        </div>
+    </div>
+    <!-- product-overlay  -->
+    <div class="product-overlay" id="product-overlay">
+        <div class="cart">
+            <span class="close-cart">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="cart-footer">
+                <h3>Total: <span class="cart-total">$0.00</span></h3>
+                <button class="clear-cart-btn">Clear Cart</button>
+                <button class="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+    <!--  weather-product end   -->
+
+
+    <!-- company information  -->
+
+    <div id="client">
+
+        <div class="main-image">
+            <img src="img/bussinase-partner.jpg" alt="">
+        </div>
+        <div class="business-partner">
+            <h3>our Investor's</h3>
+            <ul>
+                <li><img src="img/trade-india.png" alt=""></li>
+                <li><img src="img/jsw.png" alt=""></li>
+                <li><img src="img/moglix.png" alt=""></li>
+                <li><img src="img/vedanta.png" alt=""></li>
+                <li><img src="img/shivsons.png" alt=""></li>
+                <li><img src="img/tata.png" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <div id="wrold-enviroment">
+        <h2>explore our world enviroment's</h2>
+        <div class="enviroment-info">
+            <img src="img/enviroment.jpg" alt="">
+            <div class="info-details">
+                <h3>enviroment</h3>
+                <p>The word environment is used to talk about many things for example trees, river, seas,etc. People in
+                    different fields of knowledge use the word environment differently</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+        <div class="enviroment-info">
+            <img src="img/forest-fire.jpg" alt="">
+            <div class="info-details">
+                <h3>forest fire</h3>
+                <p>Naturally occurring wildfires have beneficial effects on native vegetation, animals, and ecosystems
+                    that have evolved with fire.Many plant species depend on the effects of fire for growth
+                    and reproduction</p>
+                <a href="#">Read More</a>
+
+            </div>
+        </div>
+        <div class="enviroment-info">
+            <img src="img/golabal-wrming.jpg" alt="">
+            <div class="info-details">
+                <h3>Global warming</h3>
+                <p>Global warming is the long-term warming of the planet's overall temperature. Though this warming
+                    trend has been going on for a long time, its pace has significantly increased in the last hundred
+                    years due to the burning of fossil fuels. </p>
+                <a href="#">Read More</a>
+
+            </div>
+        </div>
+        <div class="enviroment-info">
+            <img src="img/polution.jpg" alt="">
+            <div class="info-details">
+                <h3>Pollution </h3>
+                <p>Pollution is the introduction of harmful materials into the environment. These harmful materials are
+                    called pollutants. Pollutants can be natural, such as volcanic ash. They can also be created by
+                    human activity, such as trash or runoff produced by factories</p>
+                <a href="#">Read More</a>
+
+            </div>
+        </div>
+        <div class="enviroment-info">
+            <img src="img/Rain Gauges.jpg" alt="">
+            <div class="info-details">
+                <h3>Rain gauge</h3>
+                <p>A rain gauge is a meteorological instrument to measure the precipitating rain in a given amount of
+                    time per unit area. The instrument consists of a collection container which is placed in an open
+                    area. </p>
+                <a href="#">Read More</a>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- footer  -->
+    <div id="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>Who we are</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dolor nam corrupti fuga praesentium
+                    nulla quidem autem dolorem voluptas pariatur ex consequatur ipsam voluptatibus magni modi
+                    repellendus, aliquid corporis maiores!</p>
+            </div>
+            <div class="footer-info">
+                <h3>Services</h3>
+                <ul>
+                    <li>abogfdgut ghf</li>
+                    <li>abgfdoutjh gh</li>
+                    <li>abfgout gjg</li>
+                    <li>fggdfg ghgh</li>
+                    <li>abgfdgo ghut</li>
+                    <li>dddgff fghh</li>
+                    <li>hfhfhjhfjhj ghf</li>
+                </ul>
+            </div>
+            <div class="footer-info">
+                <h3>Products</h3>
+                <ul>
+                    <li>abogfdgut ghf</li>
+                    <li>abgfdoutjh gh</li>
+                    <li>abfgout gjg</li>
+                    <li>fggdfg ghgh</li>
+                    <li>abgfdgo ghut</li>
+                    <li>dddgff fghh</li>
+                    <li>hfhfhjhfjhj ghf</li>
+                </ul>
+            </div>
+            <div class="footer-info">
+                <h3>Investor</h3>
+                <ul>
+                    <li>abogfdgut ghf</li>
+                    <li>abgfdoutjh gh</li>
+                    <li>abfgout gjg</li>
+                    <li>fggdfg ghgh</li>
+                    <li>abgfdgo ghut</li>
+                    <li>dddgff fghh</li>
+                    <li>hfhfhjhfjhj ghf</li>
+                </ul>
+            </div>
+            <div class="footer-info">
+                <h3>Cerear</h3>
+                <ul>
+                    <li>abogfdgut ghf</li>
+                    <li>abgfdoutjh gh</li>
+                    <li>abfgout gjg</li>
+                    <li>fggdfg ghgh</li>
+                    <li>abgfdgo ghut</li>
+                    <li>dddgff fghh</li>
+                    <li>hfhfhjhfjhj ghf</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer-details">
+            <div>
+                <h3>get news & offers</h3>
+                <input type="email" name="" placeholder="enter your email">
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa fa-envelope"></i></a></li>
+                </ul>
+            </div>
+            <div id="contact">
+                <h3>Contact us</h3>
+                <span>+(91) 9091010059</span>
+                <span>weather01@gmail.com</span>
+                <span>www.weather.co.in</span>
+
+            </div>
+        </div>
+        <p>&copy;2024 weather will be boom</p>
+    </div>
+    <!-- jump to top  -->
+    <a href="#"><button class="topbtn"><i class="fa-solid fa fa-angle-up"></i></button></a>
+</body>
+
+</html>
